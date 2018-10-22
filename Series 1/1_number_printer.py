@@ -5,6 +5,7 @@
 # Author:      Ali Mousavi <ali.mousavi@gmail.com>
 # Instructor:  Mr. Ali Rezaee
 # Date:        2018/10/21
+import sys
 
 
 def number_printer(digits):
@@ -13,18 +14,21 @@ def number_printer(digits):
     Keyword arguments:
     digits -- The number to print its digits.
     """
+    int(digits)   # This line will raise ValueError if digits is not an integer
     for digit in list(digits):
         print(digit + ": " + digit * int(digit))
 
 
 if __name__ == '__main__':
-    digits = None
-    while not digits:
-        digits = input("Please enter an integer: ")
-        # Checking if the provided value is an integer and not just a string.
+    # Try 3 times to recieve a positive integer.
+    for idx in range(3):
         try:
-            int(digits)
+            digits = input("Please enter a positive integer: ")
             number_printer(digits)
         except ValueError:
-            print("That is not an integer")
-            digits = None
+            print("That is not a positive integer")
+        else:
+            break
+    else:
+        print("Do you even know what a \"positive integer\" means?")
+        sys.exit(1)
