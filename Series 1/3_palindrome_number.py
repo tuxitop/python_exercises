@@ -8,11 +8,11 @@
 import sys
 
 
-def check_for_palindrom_number(number):
+def check_for_palindrome_number(number):
     """Checks if the number is palindrome
 
     keyword arguments:
-    number -- the provided number
+    number -- the string representation of the number
 
     Retruns: string
     """
