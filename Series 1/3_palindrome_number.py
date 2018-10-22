@@ -9,7 +9,7 @@ import sys
 
 
 def check_for_palindrom_number(number):
-    """Checks if the number is palindrom
+    """Checks if the number is palindrome
 
     keyword arguments:
     number -- the provided number
