@@ -32,9 +32,9 @@ if __name__ == '__main__':
             number = input("Please enter an integer: ")
             print(powers_of_two(number))
         except ValueError:
-            print("That is not an integer.")
+            print("That is not an integer.", file=sys.stderr)
         else:
             break
     else:
-        print("Do you even know what an \"integer\" means?")
+        print("Do you even know what an \"integer\" means?", file=sys.stderr)
         sys.exit(1)

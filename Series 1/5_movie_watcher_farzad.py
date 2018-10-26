@@ -32,11 +32,11 @@ def input_movies_list():
             if count <= 0:
                 raise ValueError
         except ValueError:
-            print("You have to enter a \"positive integer\"")
+            print("You have to enter a \"positive integer\"", file=sys.stderr)
         else:
             break
     else:
-        print("You failed to enter a positive integer")
+        print("You failed to enter a positive integer", file=sys.stderr)
         return None
     SUFFIXES = ['th', 'st', 'nd', 'rd', 'th', 'th', 'th', 'th', 'th', 'th']
     movie_titles = []

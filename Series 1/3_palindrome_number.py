@@ -30,11 +30,12 @@ if __name__ == '__main__':
     for idx in range(3):
         try:
             number = input("Please enter a positive integer: ")
-            print(check_for_palindrom_number(number))
+            print(check_for_palindrome_number(number))
         except ValueError:
-            print("That is not a positive integer.")
+            print("That is not a positive integer.", file=sys.stderr)
         else:
             break
     else:
-        print("Do you even know what a positive \"integer\" means?")
+        print("Do you even know what a positive \"integer\" means?",
+              file=sys.stderr)
         sys.exit(1)

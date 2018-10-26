@@ -77,9 +77,10 @@ if __name__ == '__main__':
                                                int(palindrome_base))
             print(check_for_palindrome(palindromic_number))
         except ValueError as e:
-            print("Error: " + str(e))
+            print("Error: " + str(e), file=sys.stderr)
         else:
             break
     else:
-        print("Do you even know what a \"positive integer\" means?")
+        print("Do you even know what a \"positive integer\" means?",
+              file=sys.stderr)
         sys.exit(1)

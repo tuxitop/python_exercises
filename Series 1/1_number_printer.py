@@ -26,9 +26,10 @@ if __name__ == '__main__':
             digits = input("Please enter a positive integer: ")
             number_printer(digits)
         except ValueError:
-            print("That is not a positive integer")
+            print("That is not a positive integer", file=sys.stderr)
         else:
             break
     else:
-        print("Do you even know what a \"positive integer\" means?")
+        print("Do you even know what a \"positive integer\" means?",
+              file=sys.stderr)
         sys.exit(1)
