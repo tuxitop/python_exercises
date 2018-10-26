@@ -41,9 +41,10 @@ def input_list_of_numbers():
     # try 3 times to get the length of the list from the users
     for idx in range(3):
         try:
-            length = int(input(
-                "Please enter the length of the list: ")
-            )
+            # length = int(input(
+            #     "Please enter the length of the list: ")
+            # )
+            length = int(input())
             if length <= 0:
                 raise ValueError
         except ValueError:
@@ -58,9 +59,10 @@ def input_list_of_numbers():
     # try 3 times to get the list values from the users
     for idx in range(3):
         try:
-            list_str = input(
-                "Please enter the elements (seperate with space): "
-            )
+            # list_str = input(
+            #     "Please enter the elements (seperate with space): "
+            # )
+            list_str = input()
             result = [int(elem) for elem in list_str.split()]
             if len(result) != length:
                 print("Size of the entered list didn't match the length.",

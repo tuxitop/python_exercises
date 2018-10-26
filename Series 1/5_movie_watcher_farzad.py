@@ -28,7 +28,8 @@ def input_movies_list():
     # try 3 times to get a valid number
     for idx in range(3):
         try:
-            count = int(input("How many movie names do you want to provide? "))
+            # count = int(input("How many movie names do you want to provide? "))
+            count = int(input())
             if count <= 0:
                 raise ValueError
         except ValueError:
@@ -38,13 +39,14 @@ def input_movies_list():
     else:
         print("You failed to enter a positive integer", file=sys.stderr)
         return None
-    SUFFIXES = ['th', 'st', 'nd', 'rd', 'th', 'th', 'th', 'th', 'th', 'th']
+    # SUFFIXES = ['th', 'st', 'nd', 'rd', 'th', 'th', 'th', 'th', 'th', 'th']
     movie_titles = []
     idx = 1
     while idx <= count:
-        name = input(
-            'Enter the {0}{1} title: '.format(idx, SUFFIXES[idx % 10])
-        )
+        # name = input(
+        #     'Enter the {0}{1} title: '.format(idx, SUFFIXES[idx % 10])
+        # )
+        name = input()
         movie_titles.append(name)
         if name:
             idx += 1

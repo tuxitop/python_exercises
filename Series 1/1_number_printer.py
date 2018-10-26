@@ -23,7 +23,8 @@ if __name__ == '__main__':
     # Try 3 times to recieve a positive integer.
     for idx in range(3):
         try:
-            digits = input("Please enter a positive integer: ")
+            # digits = input("Please enter a positive integer: ")
+            digits = input()
             number_printer(digits)
         except ValueError:
             print("That is not a positive integer", file=sys.stderr)

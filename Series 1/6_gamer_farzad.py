@@ -67,16 +67,17 @@ def input_square_matrix(dimension):
     returns tuple of tuples representing the matrix.
     """
 
-    SUFFIXES = ['th', 'st', 'nd', 'rd', 'th', 'th', 'th', 'th', 'th', 'th']
+    # SUFFIXES = ['th', 'st', 'nd', 'rd', 'th', 'th', 'th', 'th', 'th', 'th']
     matrix = []
     for row_number in range(dimension):
         # try 3 times to get each row.
         for idx in range(3):
             try:
-                row_string = input(
-                    'Enter the {0}{1} row (separate elements with space): '
-                    .format(row_number + 1, SUFFIXES[row_number + 1 % 10])
-                )
+                # row_string = input(
+                #     'Enter the {0}{1} row (separate elements with space): '
+                #     .format(row_number + 1, SUFFIXES[row_number + 1 % 10])
+                # )
+                row_string = input()
                 row = [int(elem) for elem in row_string.split()]
                 # Check if it is a square matrix
                 if len(row) != dimension:
@@ -105,9 +106,10 @@ if __name__ == '__main__':
         # try 3 times to get the dimension from the users
         for idx in range(3):
             try:
-                dimension = int(input(
-                    "Please enter dimensions of this matrices: ")
-                )
+                # dimension = int(input(
+                #     "Please enter dimensions of this matrices: ")
+                # )
+                dimension = int(input())
                 if dimension <= 0:
                     raise ValueError
             except ValueError:
@@ -119,10 +121,10 @@ if __name__ == '__main__':
             print('You did not enter a valid dimension size.', file=sys.stderr)
             raise ValueError
 
-        print('---- First Matrix ----')
+        # print('---- First Matrix ----')
         first_matrix = input_square_matrix(dimension)
-        print('---- Second Matrix ----')
-        second_matrix = input_square_matrix()
+        # print('---- Second Matrix ----')
+        second_matrix = input_square_matrix(dimension)
         result = multiply_matrix(first_matrix, second_matrix)
         if matrix_determinant(result) % 2:
             print('Danial')

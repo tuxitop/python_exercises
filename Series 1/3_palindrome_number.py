@@ -29,7 +29,8 @@ if __name__ == '__main__':
     # Try 3 times to recieve an integer.
     for idx in range(3):
         try:
-            number = input("Please enter a positive integer: ")
+            # number = input("Please enter a positive integer: ")
+            number = input()
             print(check_for_palindrome_number(number))
         except ValueError:
             print("That is not a positive integer.", file=sys.stderr)

@@ -15,6 +15,7 @@ def convert_bases(number, initial_base=10, converted_base=10):
     base -- base of number
     converted_base --the base to convert the number to.
 
+    returns string
     """
     # Check if everything is alright
     if (initial_base > 10 or initial_base < 2):
@@ -30,15 +31,15 @@ def convert_bases(number, initial_base=10, converted_base=10):
         base_10 = 0
         for idx, digit in enumerate(str(number)[::-1]):
             # Check if the number is really in the specified base
-            if (int(digit) > initial_base - 1):
+            if (int(digit) >= initial_base):
                 raise ValueError("The number is not in base " +
                                  str(initial_base))
             # convert the number
             base_10 += int(digit) * initial_base ** idx
 
     # Convert to the required base
-    if converted_base == 10:
-        return base_10
+    if converted_base == 10 or base_10 == 0:
+        return str(base_10)
 
     reversed_converted_str = ""
     while base_10:
@@ -66,12 +67,15 @@ if __name__ == '__main__':
     # Try 3 times to recieve the required information.
     for idx in range(3):
         try:
-            number = input("Please enter a positive integer: ")
-            base = input("Please enter the base of the integer " +
-                         "(2 <= basae <= 10): ")
-            palindrome_base = input("Please enter the base in which you " +
-                                    "think the number is palindrome " +
-                                    " (2 <= base <= 10): ")
+            # number = input("Please enter a positive integer: ")
+            # base = input("Please enter the base of the integer " +
+            #              "(2 <= basae <= 10): ")
+            # palindrome_base = input("Please enter the base in which you " +
+            #                         "think the number is palindrome " +
+            #                         " (2 <= base <= 10): ")
+            number = input()
+            base = input()
+            palindrome_base = input()
             palindromic_number = convert_bases(int(number),
                                                int(base),
                                                int(palindrome_base))

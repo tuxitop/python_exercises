@@ -29,7 +29,8 @@ if __name__ == '__main__':
     # Try 3 times to recieve an integer.
     for idx in range(3):
         try:
-            number = input("Please enter an integer: ")
+            # number = input("Please enter an integer: ")
+            number = input()
             print(powers_of_two(number))
         except ValueError:
             print("That is not an integer.", file=sys.stderr)
