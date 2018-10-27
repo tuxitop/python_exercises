@@ -28,7 +28,8 @@ def input_movies_list():
     # try 3 times to get a valid number
     for idx in range(3):
         try:
-            # count = int(input("How many movie names do you want to provide? "))
+            # count = int(input(
+            #    "How many movie names do you want to provide? "))
             count = int(input())
             if count <= 0:
                 raise ValueError
